@@ -4,7 +4,7 @@ x = [1,2,3,2.5]
 w1 = [0.3, 0.4, -0.2, 2] # 1st neuron's Weights
 w2 = [0.5, -0.91, 0.26, -0.5] # 2nd Neuron's weights
 w3 = [-0.25, 0.35, 0.17, 0.87] # 3rd Neuron's weights
-
+            
 bias1 = 3 # for neuron1
 bias2 = 2 # for neuron2
 bias3 = 0.45 # for neuron3
