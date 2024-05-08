@@ -1,4 +1,19 @@
-# Code to simgle layer multi neuron Neural Network
+"""Data Initialization:
+
+    It creates an input list x containing four values: [1, 2, 3, 2.5]. These represent the inputs to the neural network.
+    Three weight lists are defined: w1, w2, and w3. Each list corresponds to the weights for one neuron, and their lengths match the number of elements in the input (x). These weights determine the influence of each input on the neuron's output.
+    Three bias values (bias1, bias2, bias3) are set for the three neurons. The bias acts as an additional constant term in the neuron's activation.
+
+Calculation:
+
+    The core calculation happens in the output list creation. It iterates through the three neurons:
+        For each neuron (represented by w1, w2, or w3), it calculates the weighted sum of the inputs. This is done by multiplying each element in the input list (x) with its corresponding weight in the current weight list (w1, w2, or w3) and summing those products.
+        The bias value for the corresponding neuron is then added to this weighted sum.
+
+Output:
+
+    The output list stores the results of these calculations for each neuron. This list will contain three numbers, representing the outputs of the three neurons in the network."""
+# Code to single layer multi neuron Neural Network
 
 x = [1,2,3,2.5]
 w1 = [0.3, 0.4, -0.2, 2] # 1st neuron's Weights
