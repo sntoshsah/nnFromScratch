@@ -19,7 +19,6 @@ np.random.seed(0)
 
 
 
-X, y = spiral_data(100, 3)
 
 class Layer_Dense:
     def __init__(self, n_inputs, n_neurons):
@@ -61,29 +60,33 @@ class Loss_CategoricalCrossEntropy(Loss):
     
 
 
+def main():
+    X, y = spiral_data(100, 3)  
+    dense1 = Layer_Dense(2,5)
+    activation1 = Activation_Relu()
 
-dense1 = Layer_Dense(2,5)
-activation1 = Activation_Relu()
+    dense2 = Layer_Dense(5,3)
+    activation2 = Activation_Softmax()
 
-dense2 = Layer_Dense(5,3)
-activation2 = Activation_Softmax()
+    dense1.forward(X)
+    print('Before  relu Activation')
+    print(dense1.output)
+    activation1.forward(dense1.output)
+    print("After relu Activation")
+    print(activation1.output)
 
-dense1.forward(X)
-print('Before  relu Activation')
-print(dense1.output)
-activation1.forward(dense1.output)
-print("After relu Activation")
-print(activation1.output)
-
-dense2.forward(activation1.output)
-print('Before  softmax Activation')
-print(dense2.output)
-activation2.forward(dense2.output)
-print("After softmax Activation")
-print(activation2.output[:5])
+    dense2.forward(activation1.output)
+    print('Before  softmax Activation')
+    print(dense2.output)
+    activation2.forward(dense2.output)
+    print("After softmax Activation")
+    print(activation2.output[:5])
 
 
-loss_function = Loss_CategoricalCrossEntropy()
-loss = loss_function.calculate(activation2.output, y)
+    loss_function = Loss_CategoricalCrossEntropy()
+    loss = loss_function.calculate(activation2.output, y)
 
-print("Loss:", loss)
+    print("Loss:", loss)
+
+if __name__ == "__main__":
+    main()
